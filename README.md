@@ -6,13 +6,14 @@ CLI JSON processing tool harnessing the power of [unmutable](https://github.com/
 ## Installation
 
 __yarn__
-
+```
 yarn global add unson
+```
 
 __npm__
-
+```
 npm install -g unson
-
+```
 
 ## Usage
 
