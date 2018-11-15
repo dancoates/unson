@@ -1,6 +1,7 @@
 import execute from './execute';
 import initRepl from './initRepl';
 import yargs from 'yargs';
+import chalk from 'chalk';
 
 const argv = yargs
   .usage('Usage: $0 [options] <pipeline>')
@@ -34,7 +35,6 @@ process.stdin.on('end', () => {
     const data = JSON.parse(rawData);
 
     if(interactive) {
-        process.stdin.end();
         initRepl({pipeline, indent, data});
     } else {
         const result = execute({data, pipeline});
