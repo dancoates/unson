@@ -7,6 +7,13 @@
     "build": "rm -rf lib && babel src --out-dir lib",
     "prepublishOnly": "yarn build"
   },
+  "files": [
+    "lib",
+    "cli.js"
+  ],
+  "bin": {
+    "unson": "./cli.js"
+  },
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "blessed": "^0.1.81",
