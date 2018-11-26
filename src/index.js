@@ -38,6 +38,9 @@ process.stdin.on('end', () => {
         initRepl({pipeline, indent, data});
     } else {
         const result = execute({data, pipeline});
-        process.stdout.write(JSON.stringify(result, null, indent) + '\n');
+        const safeResult = typeof result === 'number' || typeof result === 'string'
+            ? result
+            : JSON.stringify(result, null, indent);
+        process.stdout.write(safeResult + '\n');
     }
 });
